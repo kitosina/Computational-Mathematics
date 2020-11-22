@@ -1,0 +1,6 @@
+Graphics/GraphicsLagrange.java
+ Graphics.GraphicsLagrange
+Lagrange/LagrangeCalculations.java
+ Lagrange.LagrangeCalculations
+Lagrange/LangrangeLogic.java
+ Lagrange.LangrangeLogic

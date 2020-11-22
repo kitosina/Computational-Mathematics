@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class Matrix {
 
     private Double getDerivative11(Double x) {
@@ -93,9 +91,19 @@ public class Matrix {
                 }
             }
         }
+        for (int k = 2 - 1; k > 0; k--)
+        {
+            for (int i = k - 1; i >= 0; i--)
+            {
+                temp = matrixTemp[i][k];
 
-        
-
+                for (int j = 0; j < 2; j++)
+                {
+                    matrixTemp[i][j] -= matrixTemp[k][j] * temp;
+                    matrixInversion[i][j] -= matrixInversion[k][j] * temp;
+                }
+            }
+        }
         for (int i = 0; i < 2; i++)
             for (int j = 0; j < 2; j++)
                 matrixTemp[i][j] = matrixInversion[i][j];
@@ -112,6 +120,4 @@ public class Matrix {
 
         return multiplyMatrix;
     }
-
-
 }

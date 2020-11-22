@@ -13,12 +13,4 @@ public class Functions {
         return (Math.sin(Math.pow(x, 2.0)) - y);
     }
 
-//    public Double dFunction1 (Double x, Double y){
-//        return 2 * (x - 1) + 2 * y;
-//    }
-//
-//    public Double dFunction2 (Double x, Double y){
-//        return 2 * x * Math.cos(Math.pow(x, 2)) - 1;
-//    }
-
 }
