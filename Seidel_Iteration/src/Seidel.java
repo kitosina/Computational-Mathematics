@@ -1,16 +1,18 @@
+
 public class Seidel {
 
+    private Integer iteration = 0;
     public Double[] seidelMethod(Double[][] matrix, int n,Double[] result){
         boolean flag = true;
         Double[] function = new Double[n];
-        function = startApproximation(matrix,function,n);
+        function = startApproximation(function,n);
         int k = 0;
         do {
             function = getFunction(function,result,n,matrix);
+            iteration++;
             flag = checkValue(flag,result,function,n);
             k++;
-        }while(flag && k < 200);
-
+        } while(flag && k < 200);
         return result;
     }
 
@@ -21,7 +23,7 @@ public class Seidel {
         return result;
     }
 
-    private Double[] startApproximation(Double[][] matrix, Double[] result, int n){
+    private Double[] startApproximation(Double[] result, int n){
         for(int i = 0; i < n;i++){
             result[i]=0.0;
         }
@@ -42,9 +44,12 @@ public class Seidel {
                 }
             }
             function[i] = matrix[i][n] - s;
+            System.out.println("Iteration: " + iteration + "\tResult = " + function[i]);
+            iteration++;
         }
         return function;
     }
+
     private boolean checkValue(boolean flag,Double[] result, Double[] function, int n){
         Double norm = 0.0;
         Double eps = 0.0000000000000001;

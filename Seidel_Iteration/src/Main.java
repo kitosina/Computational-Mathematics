@@ -18,13 +18,16 @@ public class Main {
             }
         }
 
-        System.out.println("\nSeidel Корни:");
+        System.out.println("\nSeidel result:");
         result = seidel.seidelMethod(matrix,n,result);
+        System.out.println("\nSeidel Корни:");
         for(int i = 0; i < n; i++){
             System.out.println(Math.ceil(result[i]));
         }
-        System.out.println("\nIteration Корни:");
+
+        System.out.println("\nIteration result:");
         result = iteration.iterationMethod(matrix,n,result);
+        System.out.println("\nIteration Корни:");
         for(int i = 0; i < n; i++){
             System.out.println(Math.ceil(result[i]));
         }

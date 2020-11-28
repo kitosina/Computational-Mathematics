@@ -1,23 +1,26 @@
 public class Iteration {
-    public Double[] iterationMethod(Double[][] matrix, int n,Double[] result){
+    public Double[] iterationMethod(Double[][] matrix, int n, Double[] result){
         boolean flag = true;
         Double[] function = new Double[n];
-        function = startApproximation(matrix,function,n);
+        function = startApproximation(function,n);
         int k = 0;
+        int iteration = 0;
         do {
             result = getFunction(function,result,n,matrix);
-            flag = checkValue(flag,result,function,n);
+            flag = checkValue(flag, result,function,n);
             if(flag){
                 for(int i = 0;i < n;i++){
                     function[i]=result[i];
+                    System.out.println("Iteration: " + iteration + "\tResult= " + function[i]);
+                    iteration++;
                 }
             }
-        }while(flag && k < 200);
+        } while(flag && k < 200);
 
         return result;
     }
 
-    private Double[] startApproximation(Double[][] matrix, Double[] result, int n){
+    private Double[] startApproximation(Double[] result, int n){
         for(int i = 0; i < n;i++){
             result[i]=0.0;
         }
